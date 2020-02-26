@@ -37,6 +37,16 @@
 			</form>
 
 			<?php $input3 = $input1.$input2 ?>
+			<?php $right = $input3." zou een geldig e-mail adres kunnen zijn"?>
+			<?php $wrong = $input3." is geen geldig e-mail adres"?>
+
+			<?php
+			function checkEmail($input3) {
+			$find1 = strpos($input3, '@');
+			$find2 = strpos($input3, '.');
+			return ($find1 !== false && $find2 !== false && $find2 > $find1);
+			}
+			?>
 
 			<hr>
 				<ul>
@@ -46,12 +56,19 @@
 					<li>String 2 getrimd trim(): <?php echo $input2;?> </li>
 					<li>String 3 is de concatenation van string 1 en string 2: <?php echo $input3?> </li>
 					<li>De lengte van string 3 is: <?php echo strlen($input3); ?></li>
-					<li>Zoeken naar spaties. Er zit een spatie op positie <?php echo strpos($input3, ' ', 0) ?></li>
-					<li>Zoeken naar @. Er zit een @ op positie <?php echo strpos($input3, '@', 0) ?></li>
-					<li>Zoeken naar "." . Er zit een "." op positie <?php echo strpos($input3, '.', 0) ?></li>
+					<li>Zoeken naar spaties. Er zit een spatie op positie <?php echo strpos($input3, ' ') ?></li>
+					<li>Zoeken naar @. Er zit een @ op positie <?php echo strpos($input3, '@') ?></li>
+					<li>Zoeken naar "." . Er zit een "." op positie <?php echo strpos($input3, '.') ?></li>
 					<li>Zoek naar substring "PHP" vervang dit door "NodeJS": <?php echo str_replace("PHP","NodeJS",$input3); ?></li>
 					<li>Wijzig de eerste letter van string 3 naar hoofdletter: <?php echo ucfirst($input3); ?></li>
 					<li>Alles in hoofdletters: <?php echo strtoupper($input3); ?></li>
+					<li><?php
+						if ( checkEmail($input3) ) {
+							echo $right;
+						} else {
+							echo $wrong;
+						}
+						?></li>
 				</ul>
 			<hr>
 			<ol>
