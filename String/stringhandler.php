@@ -41,10 +41,11 @@
 			<?php $wrong = $input3." is geen geldig e-mail adres"?>
 
 			<?php
-			function checkEmail($input3) {
-			$find1 = strpos($input3, '@');
-			$find2 = strpos($input3, '.');
-			return ($find1 !== false && $find2 !== false && $find2 > $find1);
+			function checkEmail($input3)
+			{
+				$find1 = strpos($input3, '@');
+				$find2 = strpos($input3, '.');
+				return ($find1 !== false && $find2 !== false && $find2 > $find1);
 			}
 			?>
 
