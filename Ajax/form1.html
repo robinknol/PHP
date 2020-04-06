@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta charset="utf-8">
+		<meta name="author" content="Robin Knol GD1B">
+		<title>Ajax form_1</title>
+  </head>
+  <body>
+	  <script lang="javascript" type="text/javascript">
+			// // bind de HTML id's
+			// let firstName = document.getElementById("firstName").Value;
+			// let lastName = document.getElementById("lastName").Value;
+			// let age = document.getElementById("age").Value;
+			// let email = document.getElementById("email").Value;
+			// let responseHere = document.getElementById("responseHere");
+
+			// click event listener
+			// submitButton.addEventListener('click', ajax);
+
+			// ajax functie
+			function ajax()
+			{
+			// let responseHere = document.getElementById("responseHere");
+
+				var ajaxCall = new XMLHttpRequest();
+				ajaxCall.onreadystatechange = function()
+				{
+					if (ajaxCall.readyState === 4)// && this.status == 200)
+					{
+						// responseHere.innerHTML = ajaxCall.responseText;
+						document.getElementById("responseHere").innerHTML = ajaxCall.responseText;
+					}
+				}
+				
+				let firstName = document.getElementById("firstName").Value;
+				let lastName = document.getElementById("lastName").Value;
+				let age = document.getElementById("age").Value;
+				let email = document.getElementById("email").Value;
+				let queryString = "?firstName=" + firstName + "&lastName=" + lastName + "&age=" + age + "&email=" + email;
+				
+				// debuggen laat de http string zien
+				// console.log(queryString);
+				// bereid de ajax actie voor
+				ajaxCall.open("GET", "form1.php" + queryString, true);
+				ajaxCall.send(null); // doe het
+			}
+		</script>
+		<form name="myForm">
+			<h2>Form_2 AJAX</h2>
+			<input type="text" id="firstName" placeholder="voornaam">
+			<input type="text" name="lastName" id="lastName" placeholder="achternaam">
+			<input type="text" name="age" id="age" placeholder="leeftijd">
+			<input type="text" name="email" id="email" placeholder="E-mail">
+			<input type="button" onclick="ajax()" id="submitButton" value="submit">
+			<input type="reset" value="reset">
+		</form>
+		<div id="responseHere">Hieronderkomt de response</div>
+		<!-- <script src="Script.js"></script> -->
+  </body>
+</html>

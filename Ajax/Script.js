@@ -7,7 +7,7 @@ let submitButton = document.getElementById("submitButton");
 let responseHere = document.getElementById("responseHere");
 
 // click event listener
-submitButton.addEventListener('click', ajax);
+// submitButton.addEventListener('click', ajax);
 
 // ajax functie
 function ajax()
@@ -20,11 +20,11 @@ function ajax()
             responseHere.innerHTML = this.responseText;
         }
     }
-    let httpString = "form_1.php?firstName=" + firstName ;// + " " + lastName + "&age=" + age + "&email=" + email;
+    let queryString = "?firstName=" + firstName + "&lastName=" + lastName + "&age=" + age + "&email=" + email;
     
     // debuggen laat de http string zien
-    console.log(httpString);
+    console.log(queryString);
     // bereid de ajax actie voor
-    xmlhttp.open("GET", httpString, true);
-    xmlhttp.send(); // doe het
+    xmlhttp.open("GET", "form_1.php" + queryString, true);
+    xmlhttp.send(null); // doe het
 }
