@@ -9,7 +9,7 @@
 	echo "<ul>";
 	echo "<li>Firstname lastname: $firstName $lastName </li>";
 	echo "<li>Age: $age </li>";
-	echo "<li>E-mail: $email <li>";
+	echo "<li>E-mail: $email </li>";
 	echo "</ul>";
 	echo "</h4>"
 ?>
