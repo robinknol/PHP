@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta charset="utf-8">
+		<meta name="author" content="Robin Knol GD1B">
+		<title>Ajax form</title>
+  </head>
+  <body>
+	<form name="myForm">
+		<h2>Form AJAX</h2>
+		<input type="text" id="firstName" placeholder="voornaam">
+		<input type="text" name="lastName" id="lastName" placeholder="achternaam">
+		<input type="text" name="age" id="age" placeholder="leeftijd">
+		<input type="text" name="email" id="email" placeholder="E-mail">
+		<input type="button" onclick="ajax()" id="submitButton" value="submit">
+		<input type="reset" value="reset">
+	</form>
+	<div id="responseHere">Hieronderkomt de response</div>
+	<script src="Script.js"></script>
+  </body>
+</html>
